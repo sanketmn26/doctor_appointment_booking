@@ -6,11 +6,13 @@ import { toast } from "react-toastify";
 import HashLoader from "react-spinners/HashLoader.js";
 
 const Profile = ({ doctorData }) => {
+  console.log("doctorData",doctorData)
+  console.log("formData",doctorData)
+
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    password: "",
     phone: "",
     bio: "",
     gender: "",
@@ -27,7 +29,6 @@ const Profile = ({ doctorData }) => {
     setFormData({
       name: doctorData?.name,
       email: doctorData?.email,
-      password: "",
       phone: doctorData?.phone,
       bio: doctorData?.bio,
       gender: doctorData?.gender,
