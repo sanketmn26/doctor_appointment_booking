@@ -10,7 +10,6 @@ const useFetchData = (url) => {
     const fetchData = async () => {
       try {
         setLoading(true);
-        console.log(token)
         const res = await fetch(url, {
           headers: { Authorization: `Bearer ${token}` },
         });
