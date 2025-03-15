@@ -5,7 +5,7 @@ import { BASE_URL } from "../../config";
 import { toast } from "react-toastify";
 import HashLoader from "react-spinners/HashLoader";
 
-const Profile = ({ user }) => {
+const Profile = ({ user, setNewData }) => {
   const token = localStorage.getItem("token");
   const [selectedFile, setSelectedFile] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -58,7 +58,7 @@ const Profile = ({ user }) => {
         body: JSON.stringify(formData),
       });
 
-      const { message } = await res.json();
+      const { message, data } = await res.json();
 
       if (!res.ok) {
         throw new Error(message);
@@ -70,6 +70,7 @@ const Profile = ({ user }) => {
           zIndex: 99999,
         },
       });
+      setNewData(data)
       navigate("/users/profile/me");
     } catch (error) {
       toast.error(error.message, {
