@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { authContext } from "../../context/AuthContext";
+import { authContext } from "../../context/authContext";
 import MyAppointments from "./MyAppointments";
 import Profile from "./Profile";
 import useFetchData from "../../hooks/useFetchData";
