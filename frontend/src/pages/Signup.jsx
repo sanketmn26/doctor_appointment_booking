@@ -21,6 +21,7 @@ const Signup = () => {
     role: "patient",
   });
 
+  console.log("formData", formData);
   const navigate = useNavigate();
 
   const handleInputChange = (e) => {
@@ -57,10 +58,18 @@ const Signup = () => {
       }
 
       setLoading(false);
-      toast.success(message);
+      toast.success(message, {
+        style: {
+          zIndex: 99999,
+        },
+      });
       navigate("/login");
     } catch (error) {
-      toast.error(error.message);
+      toast.error(error.message, {
+        style: {
+          zIndex: 99999,
+        },
+      });
       setLoading(false);
     }
   };

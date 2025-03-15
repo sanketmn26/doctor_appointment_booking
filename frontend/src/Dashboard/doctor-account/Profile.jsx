@@ -1,13 +1,12 @@
 import { useState, useEffect } from "react";
 import { AiOutlineDelete } from "react-icons/ai";
 import uploadImage from "../../utils/uploadCloudinary";
-import { BASE_URL, token } from "../../config";
+import { BASE_URL } from "../../config";
 import { toast } from "react-toastify";
 import HashLoader from "react-spinners/HashLoader.js";
 
 const Profile = ({ doctorData }) => {
-  console.log("doctorData",doctorData)
-  console.log("formData",doctorData)
+  const token = localStorage.getItem("token");
 
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
@@ -72,11 +71,19 @@ const Profile = ({ doctorData }) => {
         throw Error(result.message);
       }
 
-      toast.success(result.message);
+      toast.success(result.message,{
+        style: {
+          zIndex: 99999,
+        },
+      });
       setLoading(false);
     } catch (error) {
       setLoading(false);
-      toast.error(error.message);
+      toast.error(error.message,{
+        style: {
+          zIndex: 99999,
+        },
+      });
     }
   };
 

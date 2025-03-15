@@ -49,7 +49,7 @@ body {
   position: sticky;
   top: 0;
   left: 0;
-  z-index: 99999;
+  z-index: 1000;
   background: white;
   box-shadow: 3px 3px -8px 3px #ddd;
 }

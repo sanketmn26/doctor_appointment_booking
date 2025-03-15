@@ -47,10 +47,18 @@ const Login = () => {
       });
 
       setLoading(false);
-      toast.success(result.message);
+      toast.success(result.message, {
+        style: {
+          zIndex: 99999,
+        },
+      });
       navigate("/home");
     } catch (error) {
-      toast.error(error.message);
+      toast.error(error.message, {
+        style: {
+          zIndex: 99999,
+        },
+      });
       setLoading(false);
     }
   };

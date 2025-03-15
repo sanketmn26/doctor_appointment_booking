@@ -65,10 +65,18 @@ const Profile = ({ user }) => {
       }
 
       setLoading(false);
-      toast.success(message);
+      toast.success(message, {
+        style: {
+          zIndex: 99999,
+        },
+      });
       navigate("/users/profile/me");
     } catch (error) {
-      toast.error(error.message);
+      toast.error(error.message, {
+        style: {
+          zIndex: 99999,
+        },
+      });
       setLoading(false);
     }
   };
@@ -98,7 +106,7 @@ const Profile = ({ user }) => {
             readOnly
           />
         </div>
-        <div className="mb-5">
+        {/* <div className="mb-5">
           <input
             type="password"
             placeholder="Password"
@@ -107,7 +115,7 @@ const Profile = ({ user }) => {
             onChange={handleInputChange}
             className="w-full py-3 border-b border-solid border-[#0066ff61] focus:outline-none focus:border-b-primaryColor text-[22px] leading-7 text-headingColor placeholder:text-textColor  cursor-pointer"
           />
-        </div>
+        </div> */}
 
         <div className="mb-5">
           <input
